@@ -40,6 +40,7 @@ export default function WeatherCard({
         borderRadius: "24px",
         padding: "20px",
         border: "1px solid rgba(255, 255, 255, 0.1)",
+        boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)"
       }}>
 
       {/* 🔍 Search Bar */}

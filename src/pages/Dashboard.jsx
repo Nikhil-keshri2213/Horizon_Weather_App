@@ -12,6 +12,7 @@ import HourlyForecast from "../components/HourlyForecast";
 import WeatherMap from "../components/WeatherMap";
 import { useWeatherService } from "../services/weatherAPI";
 import "../styles/DashboardStyle.css";
+import { TitleBar } from "../components/TitleBar";
 
 function Dashboard() {
   const { weatherData, fetchData, getCurrentLocation, error } =
@@ -38,16 +39,21 @@ function Dashboard() {
     });
   };
 
-  return (
-    <div className="animated-gradient bg-gradient-to-br from-gray-900 via-zinc-900 to-gray-800 min-h-screen text-white w-full md:w-min-[720px]">
-      {/* Error Message */}
-      {error && (
-        <div className="ml-0 md:ml-20 p-6">
-          <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-4">
-            <p className="text-red-300">{error}</p>
-          </div>
+  if (error) {
+    return (
+      <div className="animated-gradient bg-gradient-to-br from-red-950 via-black to-purple-950 min-h-screen flex items-center justify-center text-white px-4">
+        <div className="bg-red-500/20 border border-red-500 rounded-xl p-6 text-center max-w-md w-full">
+          <p className="text-red-300 font-semibold text-lg">{error}</p>
+          <p className="text-red-300 mt-2">Please check your internet connection...</p>
         </div>
-      )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="animated-gradient bg-gradient-to-br from-red-950 via-black  to-purple-950 min-h-screen text-white w-full md:w-min-[720px]">
+
+      <TitleBar/>
 
       {/* Sidebar for desktop only */}
       <div className="hidden md:block">

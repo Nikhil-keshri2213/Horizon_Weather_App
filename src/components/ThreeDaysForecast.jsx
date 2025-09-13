@@ -29,7 +29,9 @@ const ThreeDaysForecast = ({ forecastData = [] }) => {
             backdropFilter: "blur(10px)",
             borderRadius: "24px",
             padding: "25px",
-            border: "1px solid rgba(255, 255, 255, 0.1)",}}>
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)"
+            }}>
 
           {forecastData.map((day, index) => (
             <div key={index} className="flex items-center justify-between min-w-fit">
@@ -57,9 +59,10 @@ const ThreeDaysForecast = ({ forecastData = [] }) => {
           ))}
         </div>
       ) : (
-        <div className="flex items-center justify-center h-full">
-          <p className="text-gray-400">Loading forecast...</p>
-        </div>
+        <div className="flex flex-col items-center justify-center h-40 space-y-4">
+            <div className="animate-spin w-8 h-8 border-2 border-white/20 border-t-white/60 rounded-full" />
+            <p className="text-gray-400 font-medium">Loading forecast...</p>
+          </div>
       )}
 
     </div>

@@ -44,6 +44,7 @@ const HourlyForecast = ({ hourlyData = [] }) => {
           borderRadius: "24px",
           padding: "25px",
           border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)"
         }}>
       
       <div className="relative z-10">
@@ -105,7 +106,7 @@ const HourlyForecast = ({ hourlyData = [] }) => {
         ) : (
           <div className="flex flex-col items-center justify-center h-40 space-y-4">
             <div className="animate-spin w-8 h-8 border-2 border-white/20 border-t-white/60 rounded-full" />
-            <p className="text-gray-400 font-medium">Loading hourly forecast...</p>
+            <p className="text-gray-400 font-medium">Loading forecast...</p>
           </div>
         )}
       </div>

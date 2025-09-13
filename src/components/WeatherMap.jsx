@@ -10,7 +10,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const WeatherMap = ({ latitude, longitude, city = "Unknown Location", onLocationRequest }) => {
-  const defaultPosition = [28.6139, 77.2090];
+  const defaultPosition = [0.0, 0.0]; // Pacific Ocean
   const position = (latitude && longitude) 
     ? [parseFloat(latitude), parseFloat(longitude)]
     : defaultPosition;
@@ -24,12 +24,14 @@ const WeatherMap = ({ latitude, longitude, city = "Unknown Location", onLocation
   const isUsingDefault = !latitude || !longitude;
 
   return (
-    <div className="rounded-xl p-10 h-[750px]" style={{
+    <div
+      className="rounded-xl p-6 sm:p-10 h-[400px] sm:h-[750px]"
+      style={{
         background: "rgba(255, 255, 255, 0.05)",
         backdropFilter: "blur(10px)",
         borderRadius: "24px",
-        padding: "25px",
         border: "1px solid rgba(255, 255, 255, 0.1)",
+        boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)",
       }}>
 
       <div className="flex justify-between items-center mb-4">
@@ -40,25 +42,25 @@ const WeatherMap = ({ latitude, longitude, city = "Unknown Location", onLocation
             <span className="text-sm text-yellow-400">Showing default location</span>
             <button 
               onClick={handleLocationClick}
-              className="text-sm bg-blue-500/20 hover:bg-blue-500/40 border border-blue-500/50 rounded-lg px-3 py-1 transition-colors">
+              className="text-sm bg-blue-500/20 hover:bg-blue-500/40 border border-blue-500/50 rounded-lg px-3 py-1 transition-colors"
+            >
               Get My Location
             </button>
           </div>
         )}
       </div>
       
-      <div className="w-full h-[650px] rounded-xl overflow-hidden">
+      <div className="w-full h-[300px] sm:h-[650px] rounded-xl overflow-hidden">
         <MapContainer 
           center={position} 
-          zoom={10} 
-          scrollWheelZoom={false}
+          zoom={12} 
           style={{ height: "100%", width: "100%" }}
           className="rounded-xl"
           key={`${position[0]}-${position[1]}`}>
-          
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
           
           <Marker position={position}>
             <Popup>
@@ -77,15 +79,6 @@ const WeatherMap = ({ latitude, longitude, city = "Unknown Location", onLocation
           </Marker>
         </MapContainer>
       </div>
-      
-      {isUsingDefault && (
-        <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-          <p className="text-sm text-yellow-200">
-            <strong>Note:</strong> Location coordinates not available. Showing default location. 
-            Use the location button to get weather for your current position.
-          </p>
-        </div>
-      )}
     </div>
   );
 };
