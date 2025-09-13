@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="weather-icon">☀️</div>
+                <h3>Weather</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="icon">🏠</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📊</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📍</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🎤</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📁</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⚙️</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="user-avatar.jpg" alt="User">
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Left Panel -->
+            <section class="left-panel">
+                <!-- Current Weather Card -->
+                <div class="current-weather-card">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search location...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <div class="weather-main">
+                        <div class="weather-icon-large">🌤️</div>
+                        <div class="temperature">28°C</div>
+                        <div class="weather-description">Rainy Storm Clouds</div>
+                        <div class="location">📍 Florida, US</div>
+                        <div class="date-time">📅 24 July, 2022 5:01 AM</div>
+                    </div>
+                </div>
+
+                <!-- 7 Days Forecast -->
+                <div class="forecast-card">
+                    <div class="card-header">
+                        <h3>7 days Forecast</h3>
+                        <select class="forecast-filter">
+                            <option>7 day</option>
+                        </select>
+                    </div>
+                    <div class="forecast-list">
+                        <div class="forecast-item">
+                            <span class="day-info">
+                                <span class="weather-icon">🌦️</span>
+                                <span class="temp">+29°/+18</span>
+                                <span class="wind">25 july</span>
+                            </span>
+                            <span class="day-name">Tuesday</span>
+                        </div>
+                        <div class="forecast-item">
+                            <span class="day-info">
+                                <span class="weather-icon">🌦️</span>
+                                <span class="temp">+21°/+16</span>
+                                <span class="wind">26 july</span>
+                            </span>
+                            <span class="day-name">Wednesday</span>
+                        </div>
+                        <div class="forecast-item">
+                            <span class="day-info">
+                                <span class="weather-icon">🌦️</span>
+                                <span class="temp">+24°/+20</span>
+                                <span class="wind">27 july</span>
+                            </span>
+                            <span class="day-name">Thursday</span>
+                        </div>
+                        <div class="forecast-item">
+                            <span class="day-info">
+                                <span class="weather-icon">🌤️</span>
+                                <span class="temp">+30°/+17</span>
+                                <span class="wind">28 july</span>
+                            </span>
+                            <span class="day-name">Friday</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Tomorrow Section -->
+                    <div class="tomorrow-forecast">
+                        <h4>Tomorrow</h4>
+                        <div class="tomorrow-details">
+                            <span class="weather-icon">🌤️</span>
+                            <span class="temp">23°</span>
+                            <span class="description">Thunder Storm day</span>
+                            <div class="temp-graph">📈</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel -->
+            <section class="right-panel">
+                <!-- Today's Highlights -->
+                <div class="highlights-header">
+                    <h2>Today's Highlight</h2>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <!-- Wind Status -->
+                    <div class="stat-card">
+                        <h4>Wind Status</h4>
+                        <div class="stat-graph">
+                            <canvas id="windChart"></canvas>
+                        </div>
+                        <div class="stat-value">
+                            <span class="number">7.90</span>
+                            <span class="unit">mph</span>
+                        </div>
+                        <div class="stat-info">5:01 AM</div>
+                    </div>
+
+                    <!-- UV Index -->
+                    <div class="stat-card">
+                        <h4>UV Index</h4>
+                        <div class="stat-gauge">
+                            <canvas id="uvGauge"></canvas>
+                        </div>
+                        <div class="stat-value">
+                            <span class="number">5.50</span>
+                            <span class="unit">uv</span>
+                        </div>
+                    </div>
+
+                    <!-- Sunrise & Sunset -->
+                    <div class="stat-card">
+                        <h4>Sunrise & Sunset</h4>
+                        <div class="sun-chart">
+                            <canvas id="sunChart"></canvas>
+                        </div>
+                        <div class="sun-times">
+                            <div class="sunrise">
+                                <span>Sunrise</span>
+                                <span>5:50 AM</span>
+                            </div>
+                            <div class="sunset">
+                                <span>Sunset</span>
+                                <span>6:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Humidity -->
+                    <div class="stat-card">
+                        <h4>Humidity</h4>
+                        <div class="stat-value large">
+                            <span class="number">84</span>
+                            <span class="unit">%</span>
+                        </div>
+                        <div class="stat-info">The dew point is 27° right now</div>
+                    </div>
+
+                    <!-- Visibility -->
+                    <div class="stat-card">
+                        <h4>Visibility</h4>
+                        <div class="stat-value large">
+                            <span class="number">03</span>
+                            <span class="unit">km</span>
+                        </div>
+                        <div class="stat-info">Haze is affecting visibility</div>
+                    </div>
+
+                    <!-- Feels Like -->
+                    <div class="stat-card">
+                        <h4>Feels Like</h4>
+                        <div class="stat-value large">
+                            <span class="number">42°</span>
+                        </div>
+                        <div class="stat-info">Humidity is making it feel hotter</div>
+                    </div>
+                </div>
+
+                <!-- Weather Map -->
+                <div class="weather-map-section">
+                    <div class="map-header">
+                        <h3>Weather condition map</h3>
+                        <select class="time-filter">
+                            <option>24 hr</option>
+                        </select>
+                    </div>
+                    <div class="map-container">
+                        <div class="precipitation-bar">
+                            <h4>Precipitation</h4>
+                            <div class="precip-legend">
+                                <span>Drizzle</span>
+                                <span>Heavy</span>
+                                <span>Moderate</span>
+                                <span>Light</span>
+                            </div>
+                        </div>
+                        <div class="map-view">
+                            <div id="weatherMap"></div>
+                            <div class="map-overlay">
+                                <div class="temp-marker">
+                                    <span class="icon">☁️</span>
+                                    <span class="temp">23°</span>
+                                </div>
+                                <div class="temp-marker secondary">
+                                    <span class="icon">☁️</span>
+                                    <span class="temp">21°</span>
+                                    <span class="rain">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-controls">
+                            <button class="zoom-in">+</button>
+                            <button class="zoom-out">-</button>
+                            <button class="location">📍</button>
+                            <button class="layers">☰</button>
+                            <button class="home">🏠</button>
+                        </div>
+                    </div>
+                    <div class="map-footer">
+                        <div class="location-info">
+                            <span>📍 California, US</span>
+                            <span>🌧️ 30°</span>
+                        </div>
+                        <div class="other-locations">
+                            <span>☁️ Texas, US</span>
+                            <span>☁️ Florida, US</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
