@@ -6,7 +6,7 @@ import { FiSettings } from "react-icons/fi";
 export default function Sidebar() {
   return (
     <div
-      className="fixed left-0 top-0 h-[770px] w-20 flex flex-col shadow-2xl z-10 rounded-3xl mt-5"
+      className="fixed left-0 top-0 h-[680px] w-20 flex flex-col shadow-2xl z-10 rounded-3xl mt-5"
       style={{
         background: "rgba(255, 255, 255, 0.05)",
         backdropFilter: "blur(10px)",
