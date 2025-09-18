@@ -10,7 +10,9 @@ export const useWeatherService = () => {
   const typingTimer = useRef(null);
 
   // API Config
-  const api_key = import.meta.env.VITE_API_KEY;
+  //const api_key = import.meta.env.VITE_API_KEY;
+  const api_key = "f70e9878ba844b8584a124142251705";
+
   const api = axios.create({
     baseURL: "https://api.weatherapi.com/v1",
     timeout: 5000, // fail fast if API is too slow
