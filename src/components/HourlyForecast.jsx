@@ -40,7 +40,7 @@ const HourlyForecast = ({ hourlyData = [] }) => {
       className="rounded-3xl h-full relative overflow-hidden" 
       style={{
           background: "rgba(255, 255, 255, 0.05)",
-          backdropFilter: "blur(10px)",
+          backdropFilter: "blur(3px)",
           borderRadius: "24px",
           padding: "25px",
           border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -66,13 +66,13 @@ const HourlyForecast = ({ hourlyData = [] }) => {
                   className="flex flex-col items-center flex-shrink-0 relative group transition-all duration-300"
                   style={{
                     background: "rgba(255, 255, 255, 0.05)",
-                    backdropFilter: "blur(15px)",
+                    backdropFilter: "blur(5px)",
                     borderRadius: "20px",
                     padding: "18px 14px",
                     border: "1px solid rgba(255, 255, 255, 0.1)",
                     width: "90px",
                     height: "210px",
-                    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)"
+                    boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)"
                   }}>
 
                   <span className={`text-xs mb-3 font-medium ${

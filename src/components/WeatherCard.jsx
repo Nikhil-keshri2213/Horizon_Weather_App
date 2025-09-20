@@ -36,7 +36,7 @@ export default function WeatherCard({
       className="flex flex-col shadow-2xl w-full max-w-sm sm:max-w-md mx-auto shrink-0"
       style={{
         background: "rgba(255, 255, 255, 0.05)",
-        backdropFilter: "blur(10px)",
+        backdropFilter: "blur(3px)",
         borderRadius: "24px",
         padding: "20px",
         border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -77,11 +77,11 @@ export default function WeatherCard({
             size={80}/>
         )}
 
-        <div className="text-4xl sm:text-5xl font-semibold text-white">
+        <div className="text-4xl sm:text-5xl font-bold text-white">
           {temp || "--"}
         </div>
 
-        <div className="text-lg sm:text-xl font-light text-white mb-3 mt-1">
+        <div className="text-lg sm:text-xl font-semibold text-white mb-3 mt-1">
           {cond || "No data"}
         </div>
 

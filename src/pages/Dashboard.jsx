@@ -41,7 +41,7 @@ function Dashboard() {
 
   if (error) {
     return (
-      <div className="animated-gradient bg-gradient-to-br from-red-950 via-black to-purple-950 min-h-screen flex items-center justify-center text-white px-4">
+      <div className="animated-gradient bg-gradient-to-br from-blue-950 via-black to-purple-950 min-h-screen flex items-center justify-center text-white px-4">
         <div className="bg-red-500/20 border border-red-500 rounded-xl p-6 text-center max-w-md w-full">
           <p className="text-red-300 font-semibold text-lg">{error}</p>
           <p className="text-red-300 mt-2">Please check your internet connection...</p>
@@ -51,7 +51,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="animated-gradient bg-gradient-to-br from-red-950 via-black  to-purple-950 min-h-screen text-white w-full md:w-min-[720px]">
+    <div className="animated-gradient bg-gradient-to-br from-blue-950 via-black  to-purple-950 min-h-screen text-white w-full md:w-min-[720px]">
 
       <TitleBar/>
 

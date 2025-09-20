@@ -13,7 +13,7 @@ const ThreeDaysForecast = ({ forecastData = [] }) => {
     <div className="rounded-xl p-4 h-full min-w-fit" 
     style={{
         background: "rgba(255, 255, 255, 0.05)",
-        backdropFilter: "blur(10px)",
+        backdropFilter: "blur(2px)",
         borderRadius: "24px",
         padding: "25px",
         border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -26,7 +26,7 @@ const ThreeDaysForecast = ({ forecastData = [] }) => {
         <div className="space-y-10" 
           style={{
             background: "rgba(255, 255, 255, 0.05)",
-            backdropFilter: "blur(10px)",
+            backdropFilter: "blur(5px)",
             borderRadius: "24px",
             padding: "25px",
             border: "1px solid rgba(255, 255, 255, 0.1)",

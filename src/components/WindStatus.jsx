@@ -6,7 +6,7 @@ const WindStatus = ({ speed, unit, time }) => {
       className="bg-gray-700 rounded-xl p-4"
       style={{
         background: "rgba(255, 255, 255, 0.05)",
-        backdropFilter: "blur(10px)",
+        backdropFilter: "blur(3px)",
         borderRadius: "24px",
         padding: "25px",
         border: "1px solid rgba(255, 255, 255, 0.1)",

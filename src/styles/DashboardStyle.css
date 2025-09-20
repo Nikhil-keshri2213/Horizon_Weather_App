@@ -1,10 +1,14 @@
 .animated-gradient {
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background: url("../asset/logo/bg-.jpg") center / 100% auto,
+              linear-gradient(90deg, #000e3b, #000000, #18002b);
+  background-size: 100% auto, 400% 400%;
+  background-blend-mode:screen;
+  animation: gradientBG 10s ease infinite;
 }
 
+
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0%   { background-position: center,   0% 50%; }
+  50%  { background-position: center, 100% 50%; }
+  100% { background-position: center,   0% 50%; }
 }

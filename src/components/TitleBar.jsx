@@ -6,7 +6,7 @@ export const TitleBar = () => {
     className="w-full max-w-6xl mx-auto px-2"
     style={{
         background: "rgba(255, 255, 255, 0.05)",
-        backdropFilter: "blur(10px)",
+        backdropFilter: "blur(3px)",
         borderRadius: "20px",
         padding: "16px",
         border: "1px solid rgba(255, 255, 255, 0.1)",

@@ -9,7 +9,7 @@ export default function Sidebar() {
       className="fixed left-0 top-0 h-[680px] w-20 flex flex-col shadow-2xl z-10 rounded-3xl mt-5"
       style={{
         background: "rgba(255, 255, 255, 0.05)",
-        backdropFilter: "blur(10px)",
+        backdropFilter: "blur(2px)",
         border: "1px solid rgba(255, 255, 255, 0.1)",
         boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)"
       }}>
